@@ -8,12 +8,13 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "predeploy":"npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
     "gh-pages": "^3.0.0",
     "next": "^9.4.4",
     "react": "^16.13.1",
