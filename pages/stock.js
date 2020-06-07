@@ -1,10 +1,11 @@
 import axios from "axios";
 import Chart from "../components/Chart";
+import newList from '../components/list';
+
 const Stock = ({ stuff, ticker }) => {
-  console.log(stuff);
+  console.log(newList);
   return (
     <>
-      fdfd
       <Chart data={stuff} ticker={ticker} />
     </>
   );
@@ -14,7 +15,6 @@ Stock.getInitialProps = async ({ query }) => {
   let res = await axios.get(
     `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=${query.ticker}&interval=15min&apikey=V6PMYFQGMDIY3Y1P`
   );
-  console.log(res.data);
   const data = res.data;
   let xValue = [];
   let yValue = [];
@@ -24,7 +24,6 @@ Stock.getInitialProps = async ({ query }) => {
     yValue.push(data["Time Series (15min)"][key]["4. close"]);
     stuff.push({ x: key, y: data["Time Series (15min)"][key]["4. close"] });
   }
-  console.log(stuff);
   return { stuff: stuff, ticker: query.ticker };
 };
 export default Stock;
