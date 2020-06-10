@@ -1,6 +1,6 @@
 import { ResponsiveLine } from "@nivo/line";
 
-function Chart({ data, ticker }) {
+function Chart({ data, ticker}) {
   let datas = [
     {
       id: ticker,
@@ -9,6 +9,7 @@ function Chart({ data, ticker }) {
   ];
   return (
     <div style={{ height: 500, width: 500 }}>
+      
       <ResponsiveLine
         data={datas}
         width={500}

@@ -1,16 +1,11 @@
-import React, { useState } from "react";
-import Link from "next/link";
+import React from "react";
 import Search from '../components/Search';
 
-const Index = ({ posts, price }) => {
-  
+const Index = () => {
   return (
-    <>
-      
+    <div>
       <Search />
-     
-    </>
+    </div>
   );
 };
-
 export default Index;
